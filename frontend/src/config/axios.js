@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-// ✅ Automatically pick correct backend URL for environment
+// ✅ Correct backend link (Render)
 const baseURL = import.meta.env.MODE === 'production'
-  ? 'https://coursebackend-3.onrender.com/' // Replace with your actual Render backend URL
+  ? 'https://coursebackend-3.onrender.com'  // your backend
   : 'http://localhost:5000';
 
-// ✅ Apply to all Axios requests
 axios.defaults.baseURL = baseURL;
-axios.defaults.withCredentials = true; // allows cookies if needed (optional)
+axios.defaults.withCredentials = true; // allow cookies/auth headers if needed
 
 export default axios;
