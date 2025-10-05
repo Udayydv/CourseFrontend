@@ -1,7 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
-// ✅ Directly use your Render backend (no mode detection)
-axios.defaults.baseURL = 'https://coursebackend-3.onrender.com';
-axios.defaults.withCredentials = true;
+const instance = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000",
+  withCredentials: true, // ✅ must be true for cookies
+});
 
-export default axios;
+export default instance;
